@@ -22,11 +22,13 @@ cd xarray_learn
 
 docker build -t xarray-learn .
 
-docker run -p 8888:8888 \
-  -v "$PWD":/home/jovyan/work \
-  -v "$USERPROFILE/.aws":/home/jovyan/.aws:ro \
+MSYS_NO_PATHCONV=1 docker run -p 8888:8888 -p 8787:8787 \
+  -v "C:/Projects/xarray_learn":/home/jovyan/work \
+  -v "C:/Users/$USERNAME/.aws":/home/jovyan/.aws:ro \
   xarray-learn
 ```
+
+Port 8888 is JupyterLab. Port 8787 is the Dask dashboard (`http://127.0.0.1:8787/status`).
 
 **cmd.exe:**
 ```bat
@@ -35,7 +37,7 @@ cd xarray_learn
 
 docker build -t xarray-learn .
 
-docker run -p 8888:8888 -v "%cd%":/home/jovyan/work -v "%USERPROFILE%\.aws":/home/jovyan/.aws:ro xarray-learn
+docker run -p 8888:8888 -p 8787:8787 -v "%cd%":/home/jovyan/work -v "%USERPROFILE%\.aws":/home/jovyan/.aws:ro xarray-learn
 ```
 
 Open the URL printed in the terminal (e.g. `http://127.0.0.1:8888/lab?token=...`) and navigate to `work/notebooks/`.
