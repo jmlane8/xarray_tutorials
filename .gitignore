@@ -215,3 +215,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 note.txt
+data/sentinel2_local.zarr
+data/sentinel2_largechunks.zarr

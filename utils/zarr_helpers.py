@@ -26,6 +26,8 @@ def verify_roundtrip(original: xr.Dataset, loaded: xr.Dataset) -> None:
     Raises AssertionError if any variable does not match within float tolerance.
     """
     for var in original.data_vars:
+        if "time" not in original[var].dims:
+            continue  # skip scalars like spatial_ref
         orig_vals = original[var].isel(time=0).values
         load_vals = loaded[var].isel(time=0).compute().values
         assert np.allclose(orig_vals, load_vals, equal_nan=True), \
