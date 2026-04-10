@@ -1,24 +1,24 @@
 import xarray as xr
 from pathlib import Path
 
-# Default clip window: a 5 km × 5 km sub-region inside the Sacramento Valley AOI
-# Units: metres in EPSG:32610 (UTM Zone 10N)
-AOI_UTM = (620000, 4260000, 625000, 4265000)  # (minx, miny, maxx, maxy)
+# Default clip window: a 5 km × 5 km sub-region inside the Southeastern PA AOI
+# Units: metres in EPSG:32618 (UTM Zone 18N)
+AOI_UTM = (450000, 4395000, 455000, 4400000)  # (minx, miny, maxx, maxy)
 
 
 def clip_to_aoi(ds: xr.Dataset, bounds: tuple = AOI_UTM) -> xr.Dataset:
-    """Clip an rioxarray-enabled Dataset to a bounding box in EPSG:32610.
+    """Clip an rioxarray-enabled Dataset to a bounding box in EPSG:32618.
 
     Args:
         ds:     Dataset with .rio accessor configured (spatial dims + CRS set)
-        bounds: (minx, miny, maxx, maxy) in EPSG:32610 metres
+        bounds: (minx, miny, maxx, maxy) in EPSG:32618 metres
 
     Returns:
         Clipped Dataset
     """
     from shapely.geometry import box
     geom = box(*bounds).__geo_interface__
-    return ds.rio.clip([geom], crs="EPSG:32610")
+    return ds.rio.clip([geom], crs="EPSG:32618")
 
 
 def reproject_to_wgs84(ds: xr.Dataset) -> xr.Dataset:

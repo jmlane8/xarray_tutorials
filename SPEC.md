@@ -327,7 +327,7 @@ assert isinstance(date_widget, w.SelectionSlider)
 import xarray as xr
 from pathlib import Path
 
-AOI_UTM = (620000, 4260000, 625000, 4265000)  # (minx, miny, maxx, maxy) EPSG:32610
+AOI_UTM = (450000, 4395000, 455000, 4400000)  # (minx, miny, maxx, maxy) EPSG:32618
 
 def clip_to_aoi(ds: xr.Dataset, bounds: tuple = AOI_UTM) -> xr.Dataset:
     from shapely.geometry import box
@@ -441,7 +441,7 @@ from typing import List
 import pystac
 
 CATALOG_URL = "https://earth-search.aws.element84.com/v1"
-DEFAULT_BBOX = [-121.5, 38.5, -121.0, 39.0]
+DEFAULT_BBOX = [-75.75, 39.5, -75.25, 40.0]  # Southeastern PA (WGS84)
 DEFAULT_DATES = "2023-06-01/2023-08-31"
 
 def search_sentinel2(

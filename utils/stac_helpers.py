@@ -3,7 +3,7 @@ from typing import List
 import pystac
 
 CATALOG_URL = "https://earth-search.aws.element84.com/v1"
-DEFAULT_BBOX = [-121.5, 38.5, -121.0, 39.0]
+DEFAULT_BBOX = [-75.75, 39.5, -75.25, 40.0]  # Southeastern PA (WGS84)
 DEFAULT_DATES = "2023-06-01/2023-08-31"
 
 
