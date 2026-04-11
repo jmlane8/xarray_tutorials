@@ -10,8 +10,8 @@ Build a multi-notebook Jupyter environment that teaches xarray, Zarr, STAC, riox
 
 | Parameter | Value |
 |-----------|-------|
-| **Location** | Sacramento Valley, California (agricultural, strong NDVI signal) |
-| **Bounding box** | `[-121.5, 38.5, -121.0, 39.0]` (lon_min, lat_min, lon_max, lat_max) |
+| **Location** | Southeastern Pennsylvania (mixed urban/agricultural/forest) |
+| **Bounding box** | `[-75.75, 39.5, -75.25, 40.0]` (lon_min, lat_min, lon_max, lat_max) |
 | **Date range** | `2023-06-01` to `2023-08-31` (low cloud cover, active growing season) |
 | **Max cloud cover** | 20% |
 | **Target scenes** | 2–3 scenes (one per month) |

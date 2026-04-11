@@ -8,6 +8,7 @@ RUN mamba install -c conda-forge --yes \
       gdal \
       rioxarray \
       geopandas \
+      graphviz \
     && mamba clean --all --yes
 
 # Pure-Python packages install cleanly via pip
