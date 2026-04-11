@@ -218,3 +218,6 @@ note.txt
 data/sentinel2_local.zarr
 data/sentinel2_smallchunks.zarr
 data/sentinel2_enriched.zarr
+data/ndvi_scene0_cog.tif
+data/ndvi_scene0.tif
+data/sentinel2_geozarr.zarr
