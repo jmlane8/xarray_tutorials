@@ -3,14 +3,14 @@ from typing import List
 import pystac
 
 CATALOG_URL = "https://earth-search.aws.element84.com/v1"
-DEFAULT_BBOX = [-75.75, 39.5, -75.25, 40.0]  # Southeastern PA (WGS84)
+DEFAULT_BBOX = [-75.75, 39.5, -75.25, 40.0]   # Southeastern PA (WGS84)
 DEFAULT_DATES = "2023-06-01/2023-08-31"
 
 
 def search_sentinel2(
     bbox: List[float] = DEFAULT_BBOX,
     datetime: str = DEFAULT_DATES,
-    max_cloud: int = 20,
+    max_cloud: int = 30,
     max_items: int = 10,
 ) -> List[pystac.Item]:
     """Search Element84 earth-search for Sentinel-2 L2A items.
@@ -18,7 +18,7 @@ def search_sentinel2(
     Args:
         bbox: [lon_min, lat_min, lon_max, lat_max] in WGS84
         datetime: ISO 8601 interval string e.g. "2023-06-01/2023-08-31"
-        max_cloud: maximum cloud cover percentage (0-100)
+        max_cloud: maximum cloud cover percentage (0-100), default 30
         max_items: cap on results returned
 
     Returns:
